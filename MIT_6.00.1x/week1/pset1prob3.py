@@ -27,8 +27,7 @@ def abc(s):
         #if last char, add to collection and stop
         else:
             word += s[c]
-            collection = collection if len(collection) >= len(word) else word
-            return collection
+            return collection if len(collection) >= len(word) else word
     return collection
 
 print("Longest substring in alphabetical order is: " + abc(s) )
