@@ -23,7 +23,7 @@ def abc(s):
             else:
                 word += s[c]
                 collection = collection if len(collection) >= len(word) else word # ternary operator to get longest substring
-                word = ""
+                word = "" # clear word before next substring
         #if last char, add to collection and stop
         else:
             word += s[c]
