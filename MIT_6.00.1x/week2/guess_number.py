@@ -37,22 +37,24 @@ Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is 
 """
 def guess_number():
     prompt = ""
-    l, h = 0, 100
-    g = ( (h - l) // 2 ) + l
+    l, h = 0, 100 # start with 0 and 100
+    # get half the difference of highest and lowest num then add lowest num
+    g = ( (h - l) // 2 ) + l 
 
     print("Please think of a number between 0 and 100!")
 
+    # loop as long as guess not correct
     while (prompt != "c"):
         print("Is your secret number " + str(g) + "?")
         prompt = input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly. ")
         if prompt == 'c':
             print("Game over. Your secret number was: " + str(g))
         elif prompt == 'l':
-            l = g
-            g = ( (h - l) // 2 ) + l
+            l = g # lowest num will be guess
+            g = ( (h - l) // 2 ) + l # generate new value of guess
         elif prompt == 'h':
-            h = g
-            g = ( (h - l) // 2 ) + l
+            h = g # highest num will be guess
+            g = ( (h - l) // 2 ) + l # generate new value of guess
         else:
             print("Sorry, I did not understand your input.")
 
